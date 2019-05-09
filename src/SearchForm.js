@@ -1,4 +1,5 @@
 import React from 'react';
+import superagent from 'superagent';
 
 class SearchForm extends React.Component {
   constructor(props){
@@ -14,9 +15,20 @@ class SearchForm extends React.Component {
     this.setState({searchQuery: words});
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async event => {
     event.preventDefault();
-    this.props.locationFunction(this.state.searchQuery);
+    let currentSearch = this.state.searchQuery;
+    let locationObject = await superagent
+      .get('https://quiet-island-48990.herokuapp.com/location')
+      .query(
+        {
+          data: currentSearch
+        }   
+      );
+
+
+
+    this.props.locationFunction(locationObject);
   }
 
   render(){

@@ -9,13 +9,29 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      location: ''
+      location: { 
+        searchQuery: '',
+        formattedQuery: '',
+        latitude: '',
+        longitude: ''
+      }
     };
 
   }
 
   stateSetter = (locationData) => {
-    this.setState({location: locationData});
+
+
+    console.log(Object.keys(locationData.body));
+    this.setState({location: {
+      searchQuery: locationData.body.search_query,
+      formattedQuery: locationData.body.formatted_query,
+      latitude: locationData.body.latitude,
+      longitude: locationData.body.longitude
+    }
+  });
+    console.log(`New State: ${Object.values(this.state.location)}`);
+
   }
 
   render() {
