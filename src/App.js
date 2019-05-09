@@ -12,17 +12,14 @@ class App extends React.Component {
       location: { 
         searchQuery: '',
         formattedQuery: '',
-        latitude: '',
-        longitude: ''
+        latitude: '47.6587802',
+        longitude: '-117.4260465'
       }
     };
-
   }
 
   stateSetter = (locationData) => {
 
-
-    console.log(Object.keys(locationData.body));
     this.setState({location: {
       searchQuery: locationData.body.search_query,
       formattedQuery: locationData.body.formatted_query,
@@ -30,12 +27,10 @@ class App extends React.Component {
       longitude: locationData.body.longitude
     }
   });
-    console.log(`New State: ${Object.values(this.state.location)}`);
-
   }
 
   render() {
-    console.log(`App location: ${this.state.location}`);
+    console.log(`App location: ${Object.values(this.state.location)}`);
     return (
       <React.Fragment>
         <Header/>
@@ -51,7 +46,6 @@ class App extends React.Component {
       </React.Fragment>
     );
   }
-
   
 }
 
