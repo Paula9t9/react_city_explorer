@@ -20,19 +20,7 @@ class App extends React.Component {
         latitude: '47.6587802',
         longitude: '-117.4260465'
       },
-      weather: [{
-        forecast: 'standby',
-        time: 'standby'
-      },
-      {
-        forecast: 'standby',
-        time: 'standby'
-      },
-      {
-        forecast: 'standby',
-        time: 'standby'
-      }
-      ]
+      weather: []
     };
   }
 
@@ -84,10 +72,8 @@ class App extends React.Component {
         <SearchForm locationFunction={this.stateSetter}/>
         <Map location={this.state.location}/>
         <SearchResults api='Dark Sky'>
-          <WeatherResults forecast={this.state.weather[0].forecast} time={this.state.weather[0].time}/>
-          <WeatherResults forecast={this.state.weather[1].forecast} />
-          <WeatherResults forecast={this.state.weather[2].forecast} />
-
+          {this.state.location.searchQuery ? <WeatherResults weather={this.state.weather}/> : null}
+          
         </SearchResults>
       </React.Fragment>
     );

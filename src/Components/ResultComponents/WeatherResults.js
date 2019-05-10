@@ -12,13 +12,13 @@ class WeatherResults extends React.Component {
 
 
   render() {
-
     return (
-      <SearchResults api='Dark Sky'>
-        <li>
-          The forecast for {this.props.time} is {this.props.forecast}.
-        </li>
-      </SearchResults>
+      this.props.weather.map( day => {
+        return (<li>
+          The forecast for {day.time} is {day.forecast}
+        </li>)
+      }
+    )  
     )
   }
 
