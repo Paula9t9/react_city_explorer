@@ -2,13 +2,24 @@
 
 A way to learn react by refactoring our city explorer front end. 
 
-### Number and name of feature: Day 1 Scaffolding
+### Name of feature: Finish Results
 
-Estimate of time needed to complete: 1 hr
+Estimate of time needed to complete: 3 hrs
 
-Start time: 9:32 am
+Start time: 9:00 am
 
-Finish time: 10:50 am
+Finish time: Weather: 11 am
 
-Actual time needed to complete: 1 hr 20 mins
+Actual time needed to complete: 2 hours for 1 API (out of 3)
+
+
+### Name of feature: SCSS Styling
+
+Estimate of time needed to complete: 1 hour 30 mins
+
+Start time: 11:15 am
+
+Finish time: 12:08 pm
+
+Actual time needed to complete: 1 hr
 
