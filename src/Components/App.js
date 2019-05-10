@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
 import Header from './Header.js';
 import Map from './Map.js';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
-import WeatherResults from './ResultComponents/WeatherResults';
+import WeatherResults from './resultComponents/WeatherResults';
 import superagent from 'superagent';
-import { async } from 'q';
+import { async } from '../../node_modules/q';
+import '../scss/core.scss'
+
 
 
 class App extends React.Component {
@@ -71,10 +73,13 @@ class App extends React.Component {
         <Header/>
         <SearchForm locationFunction={this.stateSetter}/>
         <Map location={this.state.location}/>
-        <SearchResults api='Dark Sky'>
-          {this.state.location.searchQuery ? <WeatherResults weather={this.state.weather}/> : null}
+        
+          {this.state.location.searchQuery ? 
+          <SearchResults api='Dark Sky'>
+            <WeatherResults weather={this.state.weather}/> 
+          </SearchResults>: null}
           
-        </SearchResults>
+        
       </React.Fragment>
     );
   }

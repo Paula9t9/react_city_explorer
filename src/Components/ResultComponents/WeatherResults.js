@@ -1,6 +1,5 @@
-import React from 'react';
+import React from 'react'
 import SearchResults from '../SearchResults'
-import superagent from 'superagent';
 
 
 class WeatherResults extends React.Component {

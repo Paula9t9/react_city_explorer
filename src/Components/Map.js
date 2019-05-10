@@ -1,5 +1,4 @@
 import React from 'react';
-require('dotenv').config();
 let googleKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 class Map extends React.Component {
