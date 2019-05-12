@@ -3,7 +3,7 @@ import Header from './Header.js';
 import Map from './Map.js';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
-import WeatherResults from './resultComponents/WeatherResults';
+import WeatherResults from './ResultComponents/WeatherResults';
 import superagent from 'superagent';
 import { async } from '../../node_modules/q';
 import '../scss/core.scss'
